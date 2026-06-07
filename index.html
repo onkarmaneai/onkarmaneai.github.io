@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Onkar Mane — AI Research Scientist</title>
+<meta name="description" content="Onkar Mane — AI Research Scientist (MTech, IIT Kanpur). Building production GenAI systems: agentic GraphRAG pipelines, multi-agent workflows, and RAG-based enterprise chatbots.">
+<meta property="og:title" content="Onkar Mane — AI Research Scientist">
+<meta property="og:description" content="AI Research Scientist with 3+ years of experience building production GenAI systems.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0b1120;
+    --bg-card: #111a2e;
+    --bg-chip: #1a2540;
+    --border: #1f2c4a;
+    --text: #e2e8f0;
+    --text-muted: #94a3b8;
+    --accent: #38bdf8;
+    --accent-soft: rgba(56, 189, 248, 0.12);
+    --accent2: #818cf8;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, sans-serif;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 920px; margin: 0 auto; padding: 0 24px; }
+
+  /* Nav */
+  nav {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(11, 17, 32, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  nav .container { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+  .logo { font-weight: 800; font-size: 1.05rem; letter-spacing: -0.02em; color: var(--text); text-decoration: none; }
+  .logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 26px; }
+  .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color .2s; }
+  .nav-links a:hover { color: var(--accent); }
+  @media (max-width: 640px) { .nav-links { display: none; } }
+
+  /* Hero */
+  header { padding: 90px 0 70px; position: relative; overflow: hidden; }
+  header::before {
+    content: ''; position: absolute; inset: 0;
+    background:
+      radial-gradient(600px 300px at 80% 10%, rgba(56,189,248,0.10), transparent),
+      radial-gradient(500px 280px at 15% 80%, rgba(129,140,248,0.10), transparent);
+    pointer-events: none;
+  }
+  .eyebrow {
+    display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem;
+    color: var(--accent); background: var(--accent-soft);
+    border: 1px solid rgba(56,189,248,0.25); border-radius: 999px;
+    padding: 5px 14px; margin-bottom: 22px;
+  }
+  h1 { font-size: clamp(2.3rem, 6vw, 3.4rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; }
+  .subtitle { font-size: clamp(1.05rem, 2.5vw, 1.3rem); color: var(--text-muted); margin-top: 14px; font-weight: 500; }
+  .subtitle strong { color: var(--text); font-weight: 600; }
+  .hero-stat { color: var(--accent); font-weight: 700; }
+  .hero-summary { margin-top: 22px; max-width: 680px; color: var(--text-muted); font-size: 1.02rem; }
+  .hero-summary b { color: var(--text); font-weight: 600; }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 11px 22px; border-radius: 10px; font-weight: 600; font-size: 0.93rem;
+    text-decoration: none; transition: transform .15s, box-shadow .15s;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-primary { background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #0b1120; box-shadow: 0 4px 20px rgba(56,189,248,0.25); }
+  .btn-ghost { border: 1px solid var(--border); color: var(--text); background: var(--bg-card); }
+
+  /* Sections */
+  section { padding: 64px 0; border-top: 1px solid var(--border); }
+  h2 { font-size: 1.6rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 8px; }
+  h2::before { content: '// '; color: var(--accent); font-family: 'JetBrains Mono', monospace; font-size: 1.1rem; }
+  .section-sub { color: var(--text-muted); margin-bottom: 36px; font-size: 0.95rem; }
+
+  /* Skills */
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 18px; }
+  .skill-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 22px; transition: border-color .2s; }
+  .skill-card:hover { border-color: rgba(56,189,248,0.4); }
+  .skill-card h3 { font-size: 0.95rem; font-weight: 600; margin-bottom: 14px; color: var(--accent); }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip {
+    background: var(--bg-chip); border: 1px solid var(--border); color: var(--text-muted);
+    font-size: 0.78rem; font-weight: 500; padding: 4px 11px; border-radius: 999px;
+  }
+
+  /* Timeline */
+  .timeline { position: relative; padding-left: 28px; }
+  .timeline::before { content: ''; position: absolute; left: 7px; top: 6px; bottom: 6px; width: 2px; background: var(--border); }
+  .job { position: relative; padding-bottom: 44px; }
+  .job:last-child { padding-bottom: 0; }
+  .job::before {
+    content: ''; position: absolute; left: -27px; top: 7px; width: 12px; height: 12px;
+    border-radius: 50%; background: var(--accent); border: 3px solid var(--bg); box-shadow: 0 0 0 2px var(--accent);
+  }
+  .job-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 14px; }
+  .job h3 { font-size: 1.15rem; font-weight: 700; }
+  .job .company { color: var(--accent); font-weight: 600; font-size: 0.95rem; }
+  .job .dates {
+    margin-left: auto; font-family: 'JetBrains Mono', monospace; font-size: 0.78rem;
+    color: var(--text-muted); background: var(--bg-chip); padding: 3px 10px; border-radius: 6px;
+  }
+  .project { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 22px; margin-top: 16px; }
+  .project h4 { font-size: 0.98rem; font-weight: 600; margin-bottom: 4px; }
+  .project .proj-tag { font-size: 0.78rem; color: var(--accent2); font-weight: 500; }
+  .project p.lead { color: var(--text-muted); font-size: 0.9rem; margin: 8px 0 10px; }
+  .project ul { list-style: none; }
+  .project li { color: var(--text-muted); font-size: 0.9rem; padding: 5px 0 5px 22px; position: relative; }
+  .project li::before { content: '▹'; position: absolute; left: 0; color: var(--accent); }
+  .project li b { color: var(--text); font-weight: 600; }
+
+  /* Education & leadership */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  @media (max-width: 700px) { .two-col { grid-template-columns: 1fr; } }
+  .info-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 24px; }
+  .info-card h3 { font-size: 1rem; color: var(--accent); margin-bottom: 16px; }
+  .info-card ul { list-style: none; }
+  .info-card li { padding: 7px 0 7px 22px; position: relative; color: var(--text-muted); font-size: 0.92rem; }
+  .info-card li::before { content: '▹'; position: absolute; left: 0; color: var(--accent); }
+  .info-card li b { color: var(--text); font-weight: 600; }
+
+  /* Contact */
+  .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+  .contact-card {
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px;
+    padding: 22px; text-align: center; text-decoration: none; transition: border-color .2s, transform .15s;
+  }
+  .contact-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+  .contact-card .icon { font-size: 1.6rem; }
+  .contact-card .label { display: block; font-size: 0.78rem; color: var(--text-muted); margin-top: 8px; text-transform: uppercase; letter-spacing: 0.08em; }
+  .contact-card .value { display: block; color: var(--text); font-weight: 600; font-size: 0.92rem; margin-top: 4px; word-break: break-all; }
+
+  footer { border-top: 1px solid var(--border); padding: 30px 0; text-align: center; color: var(--text-muted); font-size: 0.82rem; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a class="logo" href="#">onkar<span>.mane</span></a>
+    <div class="nav-links">
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <div class="container">
+    <span class="eyebrow">AI Research Scientist · MTech, IIT Kanpur</span>
+    <h1>Onkar Mane</h1>
+    <p class="subtitle">Building production <strong>GenAI systems</strong> — agentic GraphRAG pipelines, multi-agent workflows &amp; enterprise RAG chatbots.</p>
+    <p class="hero-summary">
+      <span class="hero-stat">3+ years</span> of experience taking LLM systems from idea to production.
+      Skilled in <b>LangChain, LangGraph</b>, fine-tuning open-source LLMs (<b>Gemma, LLaMA2</b>) with
+      <b>LoRA/QLoRA</b>, and end-to-end document intelligence on graph and vector stores.
+      Reduced inference cost and latency by <span class="hero-stat">40%</span> on legal document intelligence at Cognizer AI.
+    </p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#contact">Get in touch</a>
+      <a class="btn btn-ghost" href="https://linkedin.com/in/onkar-mane-iit" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a class="btn btn-ghost" href="https://github.com/onkarmaneai" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+  </div>
+</header>
+
+<section id="skills">
+  <div class="container">
+    <h2>Skills</h2>
+    <p class="section-sub">The tools and techniques I work with daily.</p>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>Generative AI &amp; LLMs</h3>
+        <div class="chips">
+          <span class="chip">RAG</span><span class="chip">GraphRAG</span><span class="chip">Agentic AI</span>
+          <span class="chip">Multi-Agent Workflows</span><span class="chip">LangChain</span><span class="chip">LangGraph</span>
+          <span class="chip">Fine-tuning</span><span class="chip">LoRA / QLoRA</span><span class="chip">PEFT</span>
+          <span class="chip">Prompt Engineering</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>Foundation Models &amp; Frameworks</h3>
+        <div class="chips">
+          <span class="chip">GPT-4o</span><span class="chip">Claude</span><span class="chip">Gemma</span>
+          <span class="chip">LLaMA2</span><span class="chip">PyTorch</span><span class="chip">Hugging Face</span>
+          <span class="chip">scikit-learn</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>AI Development Tools</h3>
+        <div class="chips">
+          <span class="chip">Claude Code</span><span class="chip">Skills &amp; Subagents</span><span class="chip">Hooks</span>
+          <span class="chip">MCP</span><span class="chip">Slash Commands</span><span class="chip">Codex</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>Computer Vision &amp; Deep Learning</h3>
+        <div class="chips">
+          <span class="chip">CNN</span><span class="chip">Faster R-CNN</span><span class="chip">ANPR</span>
+          <span class="chip">OCR</span><span class="chip">Object Detection</span><span class="chip">OpenCV</span>
+          <span class="chip">EasyOCR</span><span class="chip">Docling</span><span class="chip">Camelot</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>Backend &amp; Data</h3>
+        <div class="chips">
+          <span class="chip">Python</span><span class="chip">FastAPI</span><span class="chip">Celery</span>
+          <span class="chip">Redis</span><span class="chip">SQL</span><span class="chip">Elasticsearch</span>
+          <span class="chip">VectorDB</span><span class="chip">Amazon Neptune</span><span class="chip">Pandas</span>
+          <span class="chip">SpaCy</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="container">
+    <h2>Experience</h2>
+    <p class="section-sub">Where I've worked and what I've built.</p>
+    <div class="timeline">
+
+      <div class="job">
+        <div class="job-head">
+          <h3>AI Research Scientist</h3>
+          <span class="company">Cognizer AI, Bangalore</span>
+          <span class="dates">Jun 2025 – Present</span>
+        </div>
+        <div class="project">
+          <h4>Legal Document Intelligence</h4>
+          <span class="proj-tag">Agentic GraphRAG · Multi-Agent Workflow</span>
+          <p class="lead">End-to-end legal document intelligence platform combining graph-based lineage, agentic retrieval, multi-agent reasoning, and interactive visualization across linked entities and versions.</p>
+          <ul>
+            <li>Designed an <b>end-to-end document lineage and linkage graph</b> for legal documents, enabling full traceability across related entities and versions.</li>
+            <li>Built an <b>Agentic GraphRAG</b> architecture using LangChain, LangGraph, Amazon Neptune (graph storage), and Elasticsearch (retrieval) for contextual reasoning over linked documents.</li>
+            <li>Implemented an <b>LLM-powered multi-agent workflow</b> with role-specific prompts — intake, risk analysis, clause comparison, summarization — for structured extraction and reasoning.</li>
+            <li>Fine-tuned open-source <b>Gemma</b> models and optimized prompts, achieving a <b>40% reduction in inference cost and latency</b> while maintaining response quality.</li>
+            <li>Developed a full-stack frontend using AI-assisted coding (<b>Codex + Claude Code</b>) for interactive visualization of document graphs, ingestion workflows, and real-time querying.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <h3>AI Engineer</h3>
+          <span class="company">Valiance Analytics, Noida</span>
+          <span class="dates">Apr 2025 – Jun 2025</span>
+        </div>
+        <div class="project">
+          <h4>Automated Document Classification &amp; Extraction for Tender Processing</h4>
+          <span class="proj-tag">Document AI · Pipelines</span>
+          <p class="lead">Scalable ingestion and extraction pipeline that classifies scanned tender PDFs and parses them into structured fields.</p>
+          <ul>
+            <li>Implemented a document ingestion pipeline using <b>Celery and Redis</b>.</li>
+            <li>Designed custom <b>Pydantic models</b> and JSON schemas for field-level extraction from scanned PDFs.</li>
+            <li>Built high-accuracy LLM prompts for classification and data extraction across diverse document types.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <h3>Data Scientist II</h3>
+          <span class="company">P99SOFT, Pune</span>
+          <span class="dates">Aug 2022 – Mar 2025</span>
+        </div>
+        <div class="project">
+          <h4>RAG-Based Enterprise Chatbot</h4>
+          <span class="proj-tag">RAG · LLM Fine-tuning</span>
+          <p class="lead">Enterprise chatbot answering natural-language questions over private high-dimensional data via SQL generation, contextual retrieval, and human-in-the-loop validation.</p>
+          <ul>
+            <li>Built a <b>RAG-based chatbot</b> with LangChain, GPT-4o, and Claude, integrating NLP for stronger contextual understanding.</li>
+            <li>Designed a pipeline for <b>keyword identification, human-in-the-loop approval, SQL generation, few-shot prompting, and summarization</b> for high-accuracy responses.</li>
+            <li>Developed a <b>FastAPI backend</b> delivering accurate GenAI-driven answers over private data <b>within 40 seconds</b>.</li>
+            <li>Cut LLM costs by <b>fine-tuning GPT-3.5 Turbo</b> for entity extraction and using <b>LoRA/QLoRA</b> on LLaMA2 for SQL generation.</li>
+          </ul>
+        </div>
+        <div class="project">
+          <h4>Advanced Document Extraction &amp; ML Classification Pipeline</h4>
+          <span class="proj-tag">Document AI · OCR</span>
+          <p class="lead">Pipeline converting unstructured PDFs into clean, queryable text and tables for downstream Q&amp;A.</p>
+          <ul>
+            <li>Built extraction with <b>LangChain, EasyOCR, Docling, and Camelot</b>, plus OpenCV/SpaCy pre- and post-processing.</li>
+            <li>Developed a Q&amp;A chatbot on top, enabling natural-language queries over structured document content.</li>
+          </ul>
+        </div>
+        <div class="project">
+          <h4>Voice Authentication System</h4>
+          <span class="proj-tag">Audio ML · Biometrics</span>
+          <p class="lead">Voice-biometric authentication for school students using speaker embeddings and similarity search.</p>
+          <ul>
+            <li>Generated voice embeddings with <b>pyannote.audio</b>, stored in a <b>VectorDB</b>, and matched identities via similarity search.</li>
+            <li>Extracted <b>MFCC features</b> and trained a PyTorch neural network for classification.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="container">
+    <h2>Education &amp; Leadership</h2>
+    <p class="section-sub">Academic background and beyond the day job.</p>
+    <div class="two-col">
+      <div class="info-card">
+        <h3>🎓 Education</h3>
+        <ul>
+          <li><b>Doctoral Research</b> (2.5 years) — IIT Kanpur</li>
+          <li><b>MTech</b> — IIT Kanpur</li>
+          <li><b>BE</b> — KIT's College of Engineering, Kolhapur</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h3>🌟 Leadership &amp; Outreach</h3>
+        <ul>
+          <li><b>Founding Member</b> — VeataminH Pvt Ltd, Bangalore</li>
+          <li><b>Annual Budding Star Award</b> — P99SOFT</li>
+          <li><b>Mentoring</b> — AI/ML mentoring for colleagues, school and college students</li>
+          <li><b>Workshops</b> — multiple workshops on AI, ML, and Deep Learning</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <h2>Contact</h2>
+    <p class="section-sub">Open to interesting problems in GenAI, agents, and document intelligence.</p>
+    <div class="contact-grid">
+      <a class="contact-card" href="mailto:onkarmane.ai@gmail.com">
+        <span class="icon">✉️</span>
+        <span class="label">Email</span>
+        <span class="value">onkarmane.ai@gmail.com</span>
+      </a>
+      <a class="contact-card" href="tel:+917007307680">
+        <span class="icon">📱</span>
+        <span class="label">Phone</span>
+        <span class="value">+91 70073 07680</span>
+      </a>
+      <a class="contact-card" href="https://linkedin.com/in/onkar-mane-iit" target="_blank" rel="noopener">
+        <span class="icon">💼</span>
+        <span class="label">LinkedIn</span>
+        <span class="value">onkar-mane-iit</span>
+      </a>
+      <a class="contact-card" href="https://github.com/onkarmaneai" target="_blank" rel="noopener">
+        <span class="icon">🐙</span>
+        <span class="label">GitHub</span>
+        <span class="value">onkarmaneai</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    © 2026 Onkar Mane · Built with plain HTML &amp; CSS · Hosted on GitHub Pages
+  </div>
+</footer>
+
+</body>
+</html>
